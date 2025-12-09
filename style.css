@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.page.active {
+    display: block;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--danger-color);
+}
+
+.question-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.question-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.question-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    transition: all 0.2s;
+}
+
+.question-number:hover {
+    background-color: #dee2e6;
+}
+
+.question-number.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.question-number.answered {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.progress-indicator {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.result-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.result-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.token-validation {
+    color: var(--danger-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.school-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.student-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .question-numbers {
+        justify-content: center;
+    }
+    
+    .question-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
