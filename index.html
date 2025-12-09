@@ -1021,29 +1021,28 @@
             scoreValue.textContent = score;
             studentName.textContent = currentStudent;
         }
-        
-        // Simpan hasil ke Google Sheets (simulasi)
-        function saveResultToGoogleSheet(studentName, score) {
-            // Di sini seharusnya ada kode untuk mengirim data ke Google Apps Script
-            // Untuk keperluan demo, kita hanya akan menampilkan di console
-            console.log(`Menyimpan hasil: ${studentName} - ${score}`);
-            
-            // Contoh implementasi dengan fetch:
-            /*
+
+        // Ganti URL_GOOGLE_APPS_SCRIPT dengan URL web app Anda
             fetch('https://script.google.com/macros/s/AKfycbyErQPlncI4_1WgUbwW79MsevC-8ezp4w11W95M5lYTNwrbHCoYxjrMwBuUkdHQVDBo/exec', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify({
-                    name: studentName,
-                    score: score,
-                    class: 'XI DPIB',
-                    date: new Date().toISOString()
+                    nama: studentName,
+                    kelas: 'XI DPIB',
+                    nilai: score,
+                    timestamp: new Date().toISOString()
                 })
             })
             .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
-            */
-        }
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        
         
         // Share hasil
         function shareResult() {
@@ -1080,4 +1079,5 @@
         }
     </script>
 </body>
+
 </html>
